@@ -540,11 +540,15 @@ class ClosestDotSearchAgent(SearchAgent):
         # Here are some useful elements of the startState
         startPosition = gameState.getPacmanPosition()
         food = gameState.getFood()
+        food = food.asList()
         walls = gameState.getWalls()
         problem = AnyFoodSearchProblem(gameState)
+        return search.breadthFirstSearch(problem)
+    
 
-        "*** YOUR CODE HERE ***"
+          
         util.raiseNotDefined()
+        
 
 class AnyFoodSearchProblem(PositionSearchProblem):
     """
@@ -578,7 +582,8 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         complete the problem definition.
         """
         x,y = state
-
+        return state in self.food.asList()
+         
         "*** YOUR CODE HERE ***"
         util.raiseNotDefined()
 
