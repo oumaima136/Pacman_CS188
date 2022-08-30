@@ -490,34 +490,31 @@ def foodHeuristic(state, problem):
     value, try: problem.heuristicInfo['wallCount'] = problem.walls.count()
     Subsequent calls to this heuristic can access
     problem.heuristicInfo['wallCount']
-    """
-    
-    current, visited = state
-    
-    visited = visited.asList()
-    heuristic = 0
+ """
+    position, foodGrid = state
+    foodGrid = foodGrid.asList()
 
-    while(visited):
-        mini,food =  min([(util.manhattanDistance(current, corner), corner) for corner in visited])
-        visited.remove(food)
-        current = food
-        heuristic += mini
-    "*** YOUR CODE HERE ***"
-    '''
-    walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
-    notVisited = []
- 
-    "*** YOUR CODE HERE ***"
-    for corner in corners:
-        if corner not in visited:
-            notVisited.append(corner)
-            ( (xy1[0] - xy2[0]) ** 2 + (xy1[1] - xy2[1]) ** 2 ) ** 0.5
-            '''
+    betweenFood = []
    
-    
-    
-    return heuristic
+    if not foodGrid:
+        return 0
 
+    for i in range(len(foodGrid)):
+        for j in range(1, len(foodGrid)):
+            betweenFood.append(util.manhattanDistance(foodGrid[i], foodGrid[j]))
+    betweenFood = sorted(betweenFood, key=lambda x:x)
+       
+    FoodPos = 0
+    e=0
+    while e < len(foodGrid)-1:
+        w = betweenFood[e]
+        FoodPos += w
+        e += 1
+    closest_food = min([util.manhattanDistance(position, food) for food in foodGrid])
+
+    return FoodPos+closest_food
+    
+   
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"
     def registerInitialState(self, state):
