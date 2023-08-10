@@ -14,7 +14,6 @@
 
 import sys
 import time
-import types
 import Tkinter
 import os.path
 
