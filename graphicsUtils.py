@@ -6,8 +6,7 @@
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
 # 
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
-# The core projects and autograders were primarily created by John DeNero
-# (denero@cs.g was added by Brad Miller, Nick Hay, and
+# The core projects and autogk Hay, and
 # Pieter Abbeel (pabbeel@cs.berkeley.edu).
 
 
