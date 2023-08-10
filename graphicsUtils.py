@@ -8,7 +8,7 @@
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autogk Hay, and
 # Pieter Abbeel (pabbeel@cs.berkeley.edu).
-
+#jowshncolaxiji wd
 
 import sys
 import time
