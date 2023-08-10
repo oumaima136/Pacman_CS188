@@ -13,9 +13,6 @@
 
 
 import sys
-import math
-import random
-import string
 import time
 import types
 import Tkinter
